@@ -13,7 +13,79 @@
 <!--CSS styles-->
 <link rel="stylesheet" href="css/styles.css">
         <title>Kennedy & Wade</title>
-    </head>
+<style>
+        /* Reset browser defaults */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Fixed Background Image Layer */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url("images/IMG_1695.JPG");
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        /* White Stretched Foreground Container */
+        .page-wrapper {
+            position: relative;
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 800px; /* Constrains content width; change to 100% for full-screen width */
+            min-height: 100vh; /* Forces container to stretch from top to bottom */
+            margin: 0 auto;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* Core Content Area */
+        .scrolling-content {
+            padding: 40px 40px;
+            flex: 1; /* Pushes footer to the bottom if content is short */
+        }
+
+        .scrolling-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #111;
+        }
+
+        .scrolling-content h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .scrolling-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #444;
+        }
+
+        /* Footer inside the white container */
+        footer {
+            padding: 30px 40px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+
     <body>
         <header class="nav-header">
              <h1 class="logo"><a href="index.html">K&W 2027</a></h1>
@@ -32,17 +104,18 @@
             </label>
         </header>
 
-        <main>
-     
-            <section id="rsvp" class="rsvp">
+    <!-- Locked Background -->
+    <div class="background-container"></div>
+
+    <!-- White Container Stretched Top-to-Bottom -->
+    <div class="page-wrapper">
+
+        <!-- Main Scrolling Text Body -->
+        <main class="scrolling-content">
+
                 <h1 class="section-title">RSVP</h1>
                 <h3 class="section-title">Please RSVP by July 1st, 2021</h3>
                 <a href="mailto:itscottobelove0724@gmail.com?subject=Wedding RSVP&body=Attending: %0DName: %0DNumber of Guests Attending: %0D">Click here to RSVP</a> or, send us an e-mail at <span id="em">itscottobelove0724@gmail.com</span>.
-            </section>
-
-            
-
-
             <!-- RSVP 
             <section class="rsvp">
                 <h1 class="section-title">RSVP</h1>
@@ -94,6 +167,37 @@
             
                 </div>
             </section>
-            End Commented out RSVP Section -->
+
+   </main>
+            
+   </main>
+    </div>
+
+
+            <footer>
+                
+            <section class="btn-social">
+                    <div class="btn-group">
+                        <a href="mailto:kennedybucci@hotmail.com" class="btn btn-primary">Send us an email</a>
+                        <a href="https://www.instagram.com/doctorjayscotto/" class="btn btn-primary">Link something here?</a>
+                    </div>
+                </section>
+                <!--
+                <ul class="footer-nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Where/When/How</a></li>
+                            <li><a href="#">Registry</a></li>
+                            <li><a href="#">RSVP</a></li>
+                </ul>
+                -->
+                <h1 class="logo"><a href="index.html">K&W 2027</a></h1>
+
+            </footer>
+
 
         </main>
+    </body>
+ 
+</html>
+
