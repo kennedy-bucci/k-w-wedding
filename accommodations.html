@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Background Scrolling Content</title>
+    <title>Stretched Content Layout with Sticky Nav</title>
     <style>
         /* Reset browser defaults */
         * {
@@ -17,115 +17,151 @@
             font-family: 'Segoe UI', Arial, sans-serif;
             color: #333;
             line-height: 1.6;
+            background-color: #111;
         }
 
-        /* Fixed Background Container */
+        /* Fixed Background Image Layer */
         .background-container {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100vh;
-            /* Using a high-quality placeholder image */
             background-image: url("images/IMG_1695.JPG");
             background-size: cover;
             background-position: center;
-            z-index: -1; /* Pushes image behind content */
+            z-index: -1;
         }
 
-        /* Dark overlay to make the welcome text readable */
-        .background-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-        }
-
-        /* Hero Welcome Header */
-        .hero-header {
-            position: relative;
-            height: 80vh; /* Leaves a preview gap for the content below */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 20px;
-        }
-
-        .hero-header h1 {
-            font-size: 3rem;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-
-        /* White Scrolling Content Section */
-        .scrolling-content {
+        /* White Stretched Foreground Container */
+        .page-wrapper {
             position: relative;
             background-color: #ffffff;
             width: 100%;
-            max-width: 900px; /* Constrains text width for readability */
-            margin: 0 auto; /* Centers the content block */
-            padding: 60px 40px;
-            border-radius: 20px 20px 0 0; /* Rounded top corners */
-            box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.15);
-            z-index: 1; /* Ensures it sits on top of the image */
+            max-width: 1100px; /* Constrains content width; change to 100% for full-screen width */
+            min-height: 100vh; /* Forces container to stretch from top to bottom */
+            margin: 0 auto;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Styling for content inside the white block */
-        .scrolling-content h2 {
-            font-size: 2rem;
+        /* Sticky Navigation Bar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            border-bottom: 1px solid #eee;
+            z-index: 100; /* Keeps nav on top of content text */
+        }
+
+        .nav-logo {
+            font-weight: bold;
+            font-size: 1.4rem;
+            color: #111;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* Core Content Area */
+        .scrolling-content {
+            padding: 60px 40px;
+            flex: 1; /* Pushes footer to the bottom if content is short */
+        }
+
+        .scrolling-content h1 {
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #111;
         }
 
-        .scrolling-content p {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: #555;
+        .scrolling-content h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #222;
         }
 
-        /* Simple footer inside the scrolling area */
+        .scrolling-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #444;
+        }
+
+        /* Footer inside the white container */
         footer {
-            margin-top: 60px;
-            padding-top: 20px;
+            padding: 30px 40px;
             border-top: 1px solid #eee;
             text-align: center;
             font-size: 0.9rem;
             color: #888;
+            background-color: #fafafa;
         }
     </style>
 </head>
 <body>
 
-    <!-- Locked Background Image -->
-    <div class="background-container">
-        <div class="background-overlay"></div>
-    </div>
+    <!-- Locked Background -->
+    <div class="background-container"></div>
 
-    <!-- Transparent top area to showcase the background -->
-    <header class="hero-header">
-        <h1>Welcome to My Website</h1>
-    </header>
+    <!-- White Container Stretched Top-to-Bottom -->
+    <div class="page-wrapper">
+        
+        <!-- Sticky Nav Bar at the top of the white box -->
+        <nav class="navbar">
+            <a href="#" class="nav-logo">BRAND</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-    <!-- White Scrolling Foreground Content -->
-    <main class="scrolling-content">
-        <h2>About This Layout</h2>
-        <p>As you scroll down, you will notice that the background image stays locked tightly in place. This white container acts like a card layered over the top, moving independently up the screen.</p>
-        
-        <h2>Why Use This?</h2>
-        <p>This approach creates a strong sense of depth and visual polish. It is highly effective for landing pages, portfolio websites, digital storytelling, or modern blog designs where you want a stunning cover photo to anchor the experience.</p>
-        
-        <h2>Customization Tips</h2>
-        <p>You can easily adjust the width of this white container by changing the `max-width` property in the CSS. Removing the `max-width` entirely will make the white background cover the full width of the screen, creating a clean full-bleed card layout.</p>
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <!-- Main Scrolling Text Body -->
+        <main class="scrolling-content">
+            <h1>Welcome to Our Platform</h1>
+            <p>This layout creates a centered column layout where the content is framed by your fixed background image. The white block runs completely from the top of the browser viewport to the very bottom.</p>
+            
+            <h2>Sticky Navigation Experience</h2>
+            <p>Scroll down the page. Notice how the navigation header snaps cleanly to the top of the screen and stays locked in place. The content scrolls seamlessly underneath it, maintaining readability and easy site navigation at all times.</p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus feugiat tempus. Proin at sollicitudin magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris porttitor nisi ipsum, sed rhoncus justo condimentum non. Curabitur sed nisl vitae justo accumsan porta eu sed risus.</p>
+            
+            <h2>Seamless Responsive Structure</h2>
+            <p>By using `min-height: 100vh`, we guarantee that even if your webpage has very little text, the white block will always touch the bottom of the user's screen. If you add more text, the container grows taller naturally.</p>
+            
+            <p>Nullam vehicula, lectus ac dictum iaculis, leo lorem feugiat turpis, vitae vehicula ex dolor in sem. Suspendisse non condimentum ex. Etiam volutpat leo a mi facilisis, vulputate dictum turpis eleifend. Integer id elementum augue, nec efficitur turpis.</p>
+        </main>
 
+        <!-- Footer always pinned to bottom of white box content -->
         <footer>
-            <p>&copy; 2026 Your Name. All rights reserved.</p>
+            <p>&copy; 2026 Your Brand. Built with modern CSS.</p>
         </footer>
-    </main>
+    </div>
 
 </body>
 </html>
