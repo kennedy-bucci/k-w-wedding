@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +14,79 @@
 <!--CSS styles-->
 <link rel="stylesheet" href="css/styles.css">
         <title>Kennedy & Wade</title>
-    </head>
+<style>
+        /* Reset browser defaults */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Fixed Background Image Layer */
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url("images/IMG_1695.JPG");
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+
+        /* White Stretched Foreground Container */
+        .page-wrapper {
+            position: relative;
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 800px; /* Constrains content width; change to 100% for full-screen width */
+            min-height: 100vh; /* Forces container to stretch from top to bottom */
+            margin: 0 auto;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        /* Core Content Area */
+        .scrolling-content {
+            padding: 150px 150px;
+            flex: 1; /* Pushes footer to the bottom if content is short */
+        }
+
+        .scrolling-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #111;
+        }
+
+        .scrolling-content h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .scrolling-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: #444;
+        }
+
+        /* Footer inside the white container */
+        footer {
+            padding: 30px 40px;
+            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+
     <body>
         <header class="nav-header">
              <h1 class="logo"><a href="index.html">K&W 2027</a></h1>
@@ -32,61 +105,59 @@
             </label>
         </header>
 
-  <main>
+    <!-- Locked Background -->
+    <div class="background-container"></div>
 
+    <!-- White Container Stretched Top-to-Bottom -->
+    <div class="page-wrapper">
 
-<section>
-<body>
-    <h1>The Venue</h1>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2798.8318546791816!2d-89.22315052339431!3d48.43405597127783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d5923c14051000d%3A0xb7e31af95e128aca!2sLakehead%20Beer%20Company!5e1!3m2!1sen!2sca!4v1781102994747!5m2!1sen!2sca" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    
-</iframe>
-</body>
-</section>
+        <!-- Main Scrolling Text Body -->
+        <main class="scrolling-content">
+<main class="scrolling-content">
+            <h1>Sunday, September 5th, 2027</h1>
+            <p>Lakehead Beer Co. (206 Park Ave)</p>
 
-
-<section>
-    <div class="where-when-how">
-                <div class="cards">
-                    <div class="card">
-                        <section class="where">
-                            <header class="where__info">
-                                <h2 class="section-title">Where</h2>
-                            </header>
-                                <p class=where-p> <a>Venue: <br> Lakehead Beer Co. </p> 
-                                <p class=where-p> <a href="https://www.lakeheadbeer.ca/"> </a> </p>
-                        </section>
-                    </div>
-                    <div class="card">
-                        <section class="when">
-                            <header class="when__info">
-                                <h2 class="section-title">When</h2>
-                            </header>
-                            <div class="when__content">
-                                <p class="when-p"> Ceremony: 5:00 PM</p>
-                                <p class="when-p"> Cocktail Hour: 5:30 PM</p>
-                                <p class="when-p"> Shuttle Timing: TBA </p>
-                                <p class="when-p"> Reception: 6:30 PM </p>
-                            </div>
-                        </section>
-                    </div>
-                    <div class="card">
-                    <section class="how">
-                        <header class="how__info">
-                            <h2 class="section-title">Parking</h2>
-                        </header>
-                        <div class="how__content">
-                            <p class="how-p">Street parking is available downtown. Free 2-hour parking at meters. </p>
-                            <p class="how-p">Uride is the local ridesharing option, taxis also available (Roach's or Diamond). </p>
-                        </div>
-                    </section>
-                    </div>
-                </div>
-            </div>
-</section>
-               
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2646.6291446586715!2d-89.22315052339432!3d48.43405597127783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4d5923c14051000d%3A0xb7e31af95e128aca!2sLakehead%20Beer%20Company!5e0!3m2!1sen!2sca!4v1781123127624!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             
-           </main>
+            <h2>Schedule</h2>
+            <p>details</p>
+
+            <h2>Attire</h2>
+            <p>...  </p>
+
+            <h2>Parking</h2>
+            <p>Street parking is available downtown. Free 2-hour parking at meters. </p>
+            <p>Uride is the local ridesharing option, taxis also available (Roach's or Diamond).</p>
+   </main>
+            
+   </main>
+    </div>
+
+
+            <footer>
+                
+            <section class="btn-social">
+                    <div class="btn-group">
+                        <a href="mailto:kennedybucci@hotmail.com" class="btn btn-primary">Send us an email</a>
+                        <a href="https://www.instagram.com/doctorjayscotto/" class="btn btn-primary">Link something here?</a>
+                    </div>
+                </section>
+                <!--
+                <ul class="footer-nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Where/When/How</a></li>
+                            <li><a href="#">Registry</a></li>
+                            <li><a href="#">RSVP</a></li>
+                </ul>
+                -->
+                <h1 class="logo"><a href="index.html">K&W 2027</a></h1>
+
+            </footer>
+
+
+        </main>
     </body>
  
 </html>
+
