@@ -1,17 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!--Font -->
-        <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Work+Sans:400,700" rel="stylesheet">
-        
-        <!--RSVP Form Styles-->
-        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Background & Ribbon</title>
+    <style>
+        /* 1. Background Settings */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            /* Replace the URL below with your own background image */
+            background: url('https://unsplash.com') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+        }
 
-    </head>
+        /* 2. Ribbon Container */
+        .ribbon-container {
+            position: relative;
+            background-color: #e63946; /* Ribbon main color */
+            color: #ffffff;
+            padding: 20px 60px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
 
- 
+        /* 3. Ribbon Left & Right "Folds" */
+        .ribbon-container::before, 
+        .ribbon-container::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            z-index: -1;
+        }
+
+        /* Left Fold */
+        .ribbon-container::before {
+            left: -25px;
+            border-width: 25px 25px 25px 0;
+            border-color: transparent #a81c26 transparent transparent;
+        }
+
+        /* Right Fold */
+        .ribbon-container::after {
+            right: -25px;
+            border-width: 25px 0 25px 25px;
+            border-color: transparent transparent transparent #a81c26;
+        }
+
+        /* 4. Inner Ribbon Tails */
+        .ribbon-container .tail::before, 
+        .ribbon-container .tail::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 15px;
+            z-index: -2;
+        }
+
+        /* Left Tail */
+        .ribbon-container .tail::before {
+            left: -15px;
+            border-color: #a81c26 #a81c26 transparent transparent;
+        }
+
+        /* Right Tail */
+        .ribbon-container .tail::after {
+            right: -15px;
+            border-color: #a81c26 transparent transparent #a81c26;
+        }
+
+        .ribbon-container h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ribbon-container">
+        <h1>Welcome</h1>
+        <div class="tail"></div>
+    </div>
+
+</body>
 </html>
