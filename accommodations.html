@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -11,14 +10,10 @@
         <!--RSVP Form Styles-->
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stretched Content Layout with Sticky Nav</title>
-    <style>
+<!--CSS styles-->
+<link rel="stylesheet" href="css/styles.css">
+        <title>Kennedy & Wade</title>
+<style>
         /* Reset browser defaults */
         * {
             box-sizing: border-box;
@@ -90,16 +85,11 @@
         }
     </style>
 </head>
-    
-<body>
 
-    <!-- Locked Background -->
-    <div class="background-container"></div>
-
-    <!-- White Container Stretched Top-to-Bottom -->
-    <div class="page-wrapper">
-        
-        <!-- Sticky Nav Bar at the top of the white box -->
+    <body>
+        <header class="nav-header">
+             <h1 class="logo"><a href="index.html">K&W 2027</a></h1>
+             <input type="checkbox" class="nav-toggle" id="nav-toggle">
              <nav>
                 <ul class="nav list-group">
                     <li><a href="index.html">Home </a></li>
@@ -109,6 +99,16 @@
                     <li><a href="registry.html">Registry </a></li>
                 </ul>
             </nav>
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+        </header>
+
+    <!-- Locked Background -->
+    <div class="background-container"></div>
+
+    <!-- White Container Stretched Top-to-Bottom -->
+    <div class="page-wrapper">
 
         <!-- Main Scrolling Text Body -->
         <main class="scrolling-content">
@@ -125,8 +125,32 @@
             
             <p>Nullam vehicula, lectus ac dictum iaculis, leo lorem feugiat turpis, vitae vehicula ex dolor in sem. Suspendisse non condimentum ex. Etiam volutpat leo a mi facilisis, vulputate dictum turpis eleifend. Integer id elementum augue, nec efficitur turpis.</p>
         </main>
-
     </div>
 
-</body>
+
+            <footer>
+                
+            <section class="btn-social">
+                    <div class="btn-group">
+                        <a href="mailto:kennedybucci@hotmail.com" class="btn btn-primary">Send us an email</a>
+                        <a href="https://www.instagram.com/doctorjayscotto/" class="btn btn-primary">Link something here?</a>
+                    </div>
+                </section>
+                <!--
+                <ul class="footer-nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Our Story</a></li>
+                            <li><a href="#">Where/When/How</a></li>
+                            <li><a href="#">Registry</a></li>
+                            <li><a href="#">RSVP</a></li>
+                </ul>
+                -->
+                <h1 class="logo"><a href="index.html">K&W 2027</a></h1>
+
+            </footer>
+
+
+        </main>
+    </body>
+ 
 </html>
