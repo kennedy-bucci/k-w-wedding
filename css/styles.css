@@ -40,7 +40,7 @@ h1.section-title {
 
 h1, h2, h3 {
     line-height:0.8;
-    text-align: centre;
+    text-align: left;
 }
 
 h1, h2, h3, h4, p {
@@ -191,7 +191,7 @@ section {
     margin: 0 auto;
     padding-top: 0.25em;
     padding: 1em;
-    justify-content: center !important;
+    justify-content: left !important;
 }
 
 .section-title {
