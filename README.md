@@ -1,7 +1,4 @@
 # wedding-website
-This website was builted and hosted to serve as my wedding website.
-![image](https://user-images.githubusercontent.com/50807550/72150841-8c392680-3374-11ea-91b0-d12a93905a2a.png)
-
 
 ## Built With
 -HTML
